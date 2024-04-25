@@ -1,0 +1,27 @@
+<style type="text/css">
+	ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul#navbar{
+	padding: 10px;
+  background-color: #dddddd;
+}
+a {
+  padding: 8px;
+}
+li button {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: blue;
+}
+
+</style>
+<% if user_signed_in? %>
+  <ul id="navbar">
+    <li><%= link_to 'New Post', 'javascript:;', onclick: 'showNewForm()' %></li>
+    <li><%= button_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+  </ul>
+<% end %>
